@@ -17,24 +17,91 @@ $(function() {
   var swiper = new Swiper('.countries_slider', {
     slidesPerView: "auto",
     spaceBetween: 30,
+    loop: true,
     autoplay: true,
     speed: 800,
+    centeredSlides: true,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
+    breakpoints: {
+      575: {
+        loop: false,
+        centeredSlides: false
+      }
+    }
   });
 
   var swiper = new Swiper(".properties_slider", {
     slidesPerView: "auto",
     spaceBetween: 30,
+    loop: true,
     autoplay: true,
     speed: 800,
+    centeredSlides: true,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      575: {
+        loop: false,
+        centeredSlides: false
+      }
     }
   });
+
+  var swiper = new Swiper('.testimonial_slider', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    autoplay: true,
+    speed: 800,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      renderBullet: function(index, className) {
+        return '<span class="' + className + '">' + (index + 1) + "</span>";
+      },
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+  var swiper = new Swiper('.companies-slider', {
+    slidesPerView: 6,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+  
+    breakpoints: {
+      320: {
+        slidesPerView: 2,
+        spaceBetween: 10,
+      },
+      640: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      },
+      1024: {
+        slidesPerView: 5,
+        spaceBetween: 30,
+      },
+      1200: {
+        slidesPerView: 6,
+        spaceBetween: 30,
+      },
+    },
+  });
+
 });
 
 const convertToOffcanvas = () => {
