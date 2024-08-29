@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Estate - Just Home</title>
+  <link rel="icon" href="./images/brand/favicon.svg" />
+  <!-- phosphor icons -->
+  <link rel="stylesheet" type="text/css" href="./plugins/phosphor-icons-2.1.0/regular/style.css">
+  <link rel="stylesheet" type="text/css" href="./plugins/phosphor-icons-2.1.0/thin/style.css">
+  <link rel="stylesheet" type="text/css" href="./plugins/phosphor-icons-2.1.0/light/style.css">
+  <link rel="stylesheet" type="text/css" href="./plugins/phosphor-icons-2.1.0/bold/style.css">
+  <link rel="stylesheet" type="text/css" href="./plugins/phosphor-icons-2.1.0/fill/style.css">
+  <link rel="stylesheet" type="text/css" href="./plugins/phosphor-icons-2.1.0/duotone/style.css">
+  <!-- styling css -->
+  <link rel="stylesheet" href="./plugins/bootstrap-5.3.3/bootstrap.min.css" />
+  <link rel="stylesheet" href="./plugins/swiper-11.1.4/swiper.min.css" />
+  <link rel="stylesheet" href="./plugins/aos-2.0.0/aos.css" />
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+
+<body>
+  <!--============================
+  =            Header            =
+  =============================-->
+  <header>
+    <nav class="navbar d-block navbar-expand-lg">
+      <div class="container-xl justify-content-start gap-3 justify-content-lg-between">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/brand/logo-dark.svg" alt="Logo">
+        </a>
+        <div class="menu_offcanvas" id="menu">
+          <div class="offcanvas-header d-lg-none">
+            <a href="index.html" class="navbar-brand">
+              <img src="images/brand/logo.svg" alt="Logo">
+            </a>
+          </div>
+          <div class="navbar-collapse offcanvas-body">
+            <ul class="navbar-nav w-100 me-lg-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="properties.html">Buy</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="properties.html">Rent</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="properties.html">Sold</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="invest.html">Invest</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="blogs.html">blogs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="header_contact d-none d-sm-flex ms-lg-0 ms-auto">
+          <div class="header_contact_icon">
+            <i class="ph ph-phone"></i>
+          </div>
+          <hgroup>
+            <span class="header_contact_slogan">Phone Number:</span>
+            <p class="header_contact_number">800-555-6789</p>
+          </hgroup>
+        </div>
+        <button class="navbar-toggler ms-auto ms-sm-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu">
+          <i class="ph-bold ph-list"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+  <!--====  End of Header  ====-->
+  <!--==========================
+  =            Main            =
+  ===========================-->
+  <main>
+    <!-- banner -->
+    <section class="banner bg-light">
+      <div class="container-xl">
+        <div class="row justify-content-center">
+          <div class="col-8 text-center">
+            <h1 class="banner_title">Find the Best Properties Just for You</h1>
+            <p class="banner_pera">Browse through our top-selected properties tailored to your needs. Discover your ideal home with our easy-to-navigate listings.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- properties -->
+    <section class="properties">
+      <div class="container-xl">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-md-4">
+            <div class="properties_search input-group">
+              <input type="text" class="form-control" placeholder="New York NY homes" />
+              <button class="btn" type="submit">
+                <i class="ph-bold ph-magnifying-glass"></i>
+              </button>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="properties_sort text-end dropdown">
+              <button class="btn dropdown-toggle" data-bs-toggle="dropdown">Sort by <span>Newest</span></button>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Newest</a></li>
+                <li><a class="dropdown-item" href="#">Oldest</a></li>
+                <li><a class="dropdown-item" href="#">3 days left</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="properties_grid pt-5">
+        <div class="container-xl">
+          <div class="row">
+            <div class="col-lg-3 properties_filter">
+              <div class="row">
+                <!-- All Status Filter -->
+                <div class="col-lg-12 properties_status">
+                  <div class="properties_filter_item">
+                    <button class="btn properties_filter_btn">
+                      <span>All Status</span>
+                      <i class="ph ph-caret-down"></i>
+                    </button>
+                    <div class="properties_filter_detail">
+                      <div class="form-check-group">
+                        <label class="form-check" for="forSale">
+                          <span class="form-check-label">For Sale</span>
+                          <input class="form-check-input" type="radio" name="propertyStatus" id="forSale" value="forSale" checked>
+                        </label>
+                        <label class="form-check" for="forRent">
+                          <span class="form-check-label">For Rent</span>
+                          <input class="form-check-input" type="radio" name="propertyStatus" id="forRent" value="forRent">
+                        </label>
+                        <label class="form-check" for="sold">
+                          <span class="form-check-label">Sold</span>
+                          <input class="form-check-input" type="radio" name="propertyStatus" id="sold" value="sold">
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Home Type Filter -->
+                <div class="col-lg-12 properties_home_type">
+                  <div class="properties_filter_item">
+                    <button class="btn properties_filter_btn">
+                      <span>Home Type</span>
+                      <i class="ph ph-caret-down"></i>
+                    </button>
+                    <div class="properties_filter_detail">
+                      <div class="house_type">
+                        <label for="apartment" class="properties_house_type">
+                          <input type="checkbox" id="apartment" name="house_type" value="apartment">
+                          <figure class="properties_house_type_img">
+                            <img src="images/house_type/apartment.webp" alt="Apartment">
+                          </figure>
+                          <span class="properties_house_type_title">Apartment</span>
+                        </label>
+                        <label for="lodge" class="properties_house_type">
+                          <input type="checkbox" id="lodge" name="house_type" value="lodge">
+                          <figure class="properties_house_type_img">
+                            <img src="images/house_type/lodge.webp" alt="Lodge">
+                          </figure>
+                          <span class="properties_house_type_title">Lodge</span>
+                        </label>
+                        <label for="townhouse" class="properties_house_type">
+                          <input type="checkbox" id="townhouse" name="house_type" value="townhouse">
+                          <figure class="properties_house_type_img">
+                            <img src="images/house_type/townhouse.webp" alt="Townhouse">
+                          </figure>
+                          <span class="properties_house_type_title">Townhouse</span>
+                        </label>
+                        <label for="villa" class="properties_house_type">
+                          <input type="checkbox" id="villa" name="house_type" value="villa">
+                          <figure class="properties_house_type_img">
+                            <img src="images/house_type/villa.webp" alt="Villa">
+                          </figure>
+                          <span class="properties_house_type_title">Villa</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Location Filter -->
+                <div class="col-lg-12 properties_location">
+                  <div class="properties_filter_item">
+                    <button class="btn properties_filter_btn">
+                      <span>Location</span>
+                      <i class="ph ph-caret-down"></i>
+                    </button>
+                    <div class="properties_filter_detail">
+                      <div class="form-check-group">
+                        <label class="form-check" for="newYork">
+                          <span class="form-check-label">New York</span>
+                          <input class="form-check-input" type="radio" name="location" id="newYork" value="newYork">
+                        </label>
+                        <label class="form-check" for="losAngeles">
+                          <span class="form-check-label">Los Angeles</span>
+                          <input class="form-check-input" type="radio" name="location" id="losAngeles" value="losAngeles">
+                        </label>
+                        <label class="form-check" for="miami">
+                          <span class="form-check-label">Miami</span>
+                          <input class="form-check-input" type="radio" name="location" id="miami" value="miami">
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Beds Filter -->
+                <div class="col-lg-12 properties_beds">
+                  <div class="properties_filter_item">
+                    <button class="btn properties_filter_btn">
+                      <span>Beds</span>
+                      <i class="ph ph-caret-down"></i>
+                    </button>
+                    <div class="properties_filter_detail">
+                      <div class="form-check-group">
+                        <label class="form-check" for="1bed">
+                          <span class="form-check-label">1 Bed</span>
+                          <input class="form-check-input" type="radio" name="beds" id="1bed" value="1bed">
+                        </label>
+                        <label class="form-check" for="2beds">
+                          <span class="form-check-label">2 Beds</span>
+                          <input class="form-check-input" type="radio" name="beds" id="2beds" value="2beds">
+                        </label>
+                        <label class="form-check" for="3beds">
+                          <span class="form-check-label">3 Beds</span>
+                          <input class="form-check-input" type="radio" name="beds" id="3beds" value="3beds">
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Baths Filter -->
+                <div class="col-lg-12 properties_baths">
+                  <div class="properties_filter_item">
+                    <button class="btn properties_filter_btn">
+                      <span>Baths</span>
+                      <i class="ph ph-caret-down"></i>
+                    </button>
+                    <div class="properties_filter_detail">
+                      <div class="form-check-group">
+                        <label class="form-check" for="1bath">
+                          <span class="form-check-label">1 Bath</span>
+                          <input class="form-check-input" type="radio" name="baths" id="1bath" value="1bath">
+                        </label>
+                        <label class="form-check" for="2baths">
+                          <span class="form-check-label">2 Baths</span>
+                          <input class="form-check-input" type="radio" name="baths" id="2baths" value="2baths">
+                        </label>
+                        <label class="form-check" for="3baths">
+                          <span class="form-check-label">3 Baths</span>
+                          <input class="form-check-input" type="radio" name="baths" id="3baths" value="3baths">
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Garages Filter -->
+                <div class="col-lg-12 properties_garages">
+                  <div class="properties_filter_item">
+                    <button class="btn properties_filter_btn">
+                      <span>Garages</span>
+                      <i class="ph ph-caret-down"></i>
+                    </button>
+                    <div class="properties_filter_detail">
+                      <div class="form-check-group">
+                        <label class="form-check" for="1garage">
+                          <span class="form-check-label">1 Garage</span>
+                          <input class="form-check-input" type="radio" name="garages" id="1garage" value="1garage">
+                        </label>
+                        <label class="form-check" for="2garages">
+                          <span class="form-check-label">2 Garages</span>
+                          <input class="form-check-input" type="radio" name="garages" id="2garages" value="2garages">
+                        </label>
+                        <label class="form-check" for="3garages">
+                          <span class="form-check-label">3 Garages</span>
+                          <input class="form-check-input" type="radio" name="garages" id="3garages" value="3garages">
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-9">
+              <div class="row gy-4">
+                <div class="col-md-6">
+                  <div class="property_card card">
+                    <figure class="property_img">
+                      <img src="images/properties/property_1.webp" alt="Luxury Villa">
+                    </figure>
+                    <div class="card-body">
+                      <span class="badge">For Rent</span>
+                      <div class="property_content d-flex justify-content-between align-items-center gap-2">
+                        <h4 class="card-title">Luxury Villa</h4>
+                        <span class="property_price">$1,200,000</span>
+                      </div>
+                      <div class="property_location d-flex align-items-center gap-2">
+                        <i class="ph ph-map-pin-area"></i>
+                        <p class="webkit_box card-text">123 Beverly Hills, CA 90210</p>
+                      </div>
+                      <div class="property_detail d-flex justify-content-between">
+                        <div class="property_detail_item">
+                          <i class="ph ph-bed"></i>
+                          <span>5 Beds</span>
+                        </div>
+                        <div class="property_detail_item">
+                          <i class="ph ph-bathtub"></i>
+                          <span>4 Baths</span>
+                        </div>
+                        <div class="property_detail_item">
+                          <i class="ph ph-copy-simple"></i>
+                          <span>4000 Sqft</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="property_card card">
+                    <figure class="property_img">
+                      <img src="images/properties/property_2.webp" alt="Modern Apartment">
+                    </figure>
+                    <div class="card-body">
+                      <span class="badge">For Sale</span>
+                      <div class="property_content d-flex justify-content-between align-items-center gap-2">
+                        <h4 class="card-title">Modern Apartment</h4>
+                        <span class="property_price">$850,000</span>
+                      </div>
+                      <div class="property_location d-flex align-items-center gap-2">
+                        <i class="ph ph-map-pin-area"></i>
+                        <p class="webkit_box card-text">456 Downtown, NY 10001</p>
+                      </div>
+                      <div class="property_detail d-flex justify-content-between">
+                        <div class="property_detail_item">
+                          <i class="ph ph-bed"></i>
+                          <span>3 Beds</span>
+                        </div>
+                        <div class="property_detail_item">
+                          <i class="ph ph-bathtub"></i>
+                          <span>2 Baths</span>
+                        </div>
+                        <div class="property_detail_item">
+                          <i class="ph ph-copy-simple"></i>
+                          <span>1500 Sqft</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="property_card card">
+                    <figure class="property_img">
+                      <img src="images/properties/property_3.webp" alt="Cozy Cottage">
+                    </figure>
+                    <div class="card-body">
+                      <span class="badge">For Sale</span>
+                      <div class="property_content d-flex justify-content-between align-items-center gap-2">
+                        <h4 class="card-title">Cozy Cottage</h4>
+                        <span class="property_price">$650,000</span>
+                      </div>
+                      <div class="property_location d-flex align-items-center gap-2">
+                        <i class="ph ph-map-pin-area"></i>
+                        <p class="webkit_box card-text">789 Oak Street, TX 75001</p>
+                      </div>
+                      <div class="property_detail d-flex justify-content-between">
+                        <div class="property_detail_item">
+                          <i class="ph ph-bed"></i>
+                          <span>2 Beds</span>
+                        </div>
+                        <div class="property_detail_item">
+                          <i class="ph ph-bathtub"></i>
+                          <span>1 Bath</span>
+                        </div>
+                        <div class="property_detail_item">
+                          <i class="ph ph-copy-simple"></i>
+                          <span>1200 Sqft</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="property_card card">
+                    <figure class="property_img">
+                      <img src="images/properties/property_4.webp" alt="Spacious Loft">
+                    </figure>
+                    <div class="card-body">
+                      <span class="badge">For Rent</span>
+                      <div class="property_content d-flex justify-content-between align-items-center gap-2">
+                        <h4 class="card-title">Spacious Loft</h4>
+                        <span class="property_price">$1,500/month</span>
+                      </div>
+                      <div class="property_location d-flex align-items-center gap-2">
+                        <i class="ph ph-map-pin-area"></i>
+                        <p class="webkit_box card-text">101 High Street, SF 94105</p>
+                      </div>
+                      <div class="property_detail d-flex justify-content-between">
+                        <div class="property_detail_item">
+                          <i class="ph ph-bed"></i>
+                          <span>1 Bed</span>
+                        </div>
+                        <div class="property_detail_item">
+                          <i class="ph ph-bathtub"></i>
+                          <span>1 Bath</span>
+                        </div>
+                        <div class="property_detail_item">
+                          <i class="ph ph-copy-simple"></i>
+                          <span>800 Sqft</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="property_card card">
+                    <figure class="property_img">
+                      <img src="images/properties/property_5.webp" alt="Elegant Mansion">
+                    </figure>
+                    <div class="card-body">
+                      <span class="badge">For Sale</span>
+                      <div class="property_content d-flex justify-content-between align-items-center gap-2">
+                        <h4 class="card-title">Elegant Mansion</h4>
+                        <span class="property_price">$2,500,000</span>
+                      </div>
+                      <div class="property_location d-flex align-items-center gap-2">
+                        <i class="ph ph-map-pin-area"></i>
+                        <p class="webkit_box card-text">202 Luxury Lane, FL 33101</p>
+                      </div>
+                      <div class="property_detail d-flex justify-content-between">
+                        <div class="property_detail_item">
+                          <i class="ph ph-bed"></i>
+                          <span>6 Beds</span>
+                        </div>
+                        <div class="property_detail_item">
+                          <i class="ph ph-bathtub"></i>
+                          <span>5 Baths</span>
+                        </div>
+                        <div class="property_detail_item">
+                          <i class="ph ph-copy-simple"></i>
+                          <span>6000 Sqft</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="property_card card">
+                    <figure class="property_img">
+                      <img src="images/properties/property_6.webp" alt="Charming Bungalow">
+                    </figure>
+                    <div class="card-body">
+                      <span class="badge">For Sale</span>
+                      <div class="property_content d-flex justify-content-between align-items-center gap-2">
+                        <h4 class="card-title">Charming Bungalow</h4>
+                        <span class="property_price">$750,000</span>
+                      </div>
+                      <div class="property_location d-flex align-items-center gap-2">
+                        <i class="ph ph-map-pin-area"></i>
+                        <p class="webkit_box card-text">303 Maple Ave, WA 98001</p>
+                      </div>
+                      <div class="property_detail d-flex justify-content-between">
+                        <div class="property_detail_item">
+                          <i class="ph ph-bed"></i>
+                          <span>3 Beds</span>
+                        </div>
+                        <div class="property_detail_item">
+                          <i class="ph ph-bathtub"></i>
+                          <span>2 Baths</span>
+                        </div>
+                        <div class="property_detail_item">
+                          <i class="ph ph-copy-simple"></i>
+                          <span>1800 Sqft</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="property_card card">
+                    <figure class="property_img">
+                      <img src="images/properties/property_7.webp" alt="Stylish Condo">
+                    </figure>
+                    <div class="card-body">
+                      <span class="badge">For Rent</span>
+                      <div class="property_content d-flex justify-content-between align-items-center gap-2">
+                        <h4 class="card-title">Stylish Condo</h4>
+                        <span class="property_price">$1,000/month</span>
+                        </ div>
+                        <div class="property_location d-flex align-items-center gap-2">
+                          <i class="ph ph-map-pin-area"></i>
+                          <p class="webkit_box card-text">404 Park Avenue, LA 90001</p>
+                        </div>
+                        <div class="property_detail d-flex justify-content-between">
+                          <div class="property_detail_item">
+                            <i class="ph ph-bed"></i>
+                            <span>2 Beds</span>
+                          </div>
+                          <div class="property_detail_item">
+                            <i class="ph ph-bathtub"></i>
+                            <span>1 Bath</span>
+                          </div>
+                          <div class="property_detail_item">
+                            <i class="ph ph-copy-simple"></i>
+                            <span>1000 Sqft</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Property 8 -->
+                  <div class="col-md-6">
+                    <div class="property_card card">
+                      <figure class="property_img">
+                        <img src="images/properties/property_8.webp" alt="Spacious Farmhouse">
+                      </figure>
+                      <div class="card-body">
+                        <span class="badge">For Sale</span>
+                        <div class="property_content d-flex justify-content-between align-items-center gap-2">
+                          <h4 class="card-title">Spacious Farmhouse</h4>
+                          <span class="property_price">$1,800,000</span>
+                        </div>
+                        <div class="property_location d-flex align-items-center gap-2">
+                          <i class="ph ph-map-pin-area"></i>
+                          <p class="webkit_box card-text">505 Rural Road, CO 80201</p>
+                        </div>
+                        <div class="property_detail d-flex justify-content-between">
+                          <div class="property_detail_item">
+                            <i class="ph ph-bed"></i>
+                            <span>4 Beds</span>
+                          </div>
+                          <div class="property_detail_item">
+                            <i class="ph ph-bathtub"></i>
+                            <span>3 Baths</span>
+                          </div>
+                          <div class="property_detail_item">
+                            <i class="ph ph-copy-simple"></i>
+                            <span>3500 Sqft</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!--====  End of Main  ====-->
+  <!--============================
+  =            Footer            =
+  =============================-->
+  <footer class="bg-dark">
+    <div class="container-xl">
+      <div class="row gy-5">
+        <div class="col-xl-4">
+          <div class="row align-items-center">
+            <div class="col-xl-12 col-md-6">
+              <div class="d-flex gap-4 align-items-center mb-4">
+                <div class="navbar-brand footer_logo">
+                  <img src="images/brand/logo-dark.svg" alt="">
+                </div>
+                <hgroup>
+                  <h5 class="footer_disclaimer_heading">Disclaimer:</h5>
+                  <p class="footer_disclaimer">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet, dignissimos.</p>
+                </hgroup>
+              </div>
+            </div>
+            <div class="col-xl-12 col-md-6">
+              <div class="social_icons justify-content-md-end justify-content-xl-start">
+                <div class="icon facebook">
+                  <figure>
+                    <img src="images/icons/facebook.svg" alt="">
+                  </figure>
+                </div>
+                <div class="icon twitter">
+                  <figure>
+                    <img src="images/icons/twitter.svg" alt="">
+                  </figure>
+                </div>
+                <div class="icon instagram">
+                  <figure>
+                    <img src="images/icons/instagram.svg" alt="">
+                  </figure>
+                </div>
+                <div class="icon google_plus">
+                  <figure>
+                    <img src="images/icons/google_plus.svg" alt="">
+                  </figure>
+                </div>
+                <div class="icon linkedin">
+                  <figure>
+                    <img src="images/icons/linkedin.svg" alt="">
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-8">
+          <div class="row gy-5">
+            <div class="col-lg-4 col-sm-6">
+              <h4 class="footer_heading">Discover</h4>
+              <ul class="footer_links">
+                <li><a href="#" class="footer_link">Miami</a></li>
+                <li><a href="#" class="footer_link">New York</a></li>
+                <li><a href="#" class="footer_link">Chicago</a></li>
+                <li><a href="#" class="footer_link">Sacramento</a></li>
+                <li><a href="#" class="footer_link">Los Angeles</a></li>
+                <li><a href="#" class="footer_link">San Francisco</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+              <h4 class="footer_heading">Quick Links</h4>
+              <ul class="footer_links">
+                <li><a href="#" class="footer_link">About</a></li>
+                <li><a href="#" class="footer_link">Contact</a></li>
+                <li><a href="#" class="footer_link">Pricing Plans</a></li>
+                <li><a href="#" class="footer_link">Privacy Policy</a></li>
+                <li><a href="#" class="footer_link">Terms & Conditions</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+              <h4 class="footer_heading">Contact Us</h4>
+              <ul class="footer_links">
+                <li>
+                  <a href="mailto:hi@justhome.com" class="footer_link">hi@justhome.com</a><br>
+                </li>
+                <li>
+                  <a href="tel:+1234567890" class="footer_link">(123) 456-7890</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <div class="container-xl">
+        <p class="text-center">© 2024 Jushome. All rights reserved. Created by Hayyan Ali.</p>
+      </div>
+    </div>
+  </footer>
+  <!--====  End of Footer  ====-->
+  <script type="text/javascript" src="./plugins/jquery-3.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="./plugins/swiper-11.1.4/swiper.min.js"></script>
+  <script type="text/javascript" src="./plugins/bootstrap-5.3.3/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="./js/script.js"></script>
+</body>
+
+</html>

@@ -393,10 +393,10 @@ section {
   color: var(--white) !important;
 }
 
-.btn:hover {
+.btn:where(:hover, :focus) {
   translate: 0 -3px;
   color: var(--white) !important;
-  background-color: var(--primary-hover);
+  background-color: var(--primary-hover) !important;
   box-shadow: 0px 15px 15px -17px var(--primary);
 }
 
@@ -725,7 +725,6 @@ header {
   padding-block: 100px;
 }
 
-
 .hero .row {
   z-index: 1;
   position: relative;
@@ -847,6 +846,21 @@ header {
   color: var(--white);
 }
 
+/* banenr */
+.banner_title {
+  color: var(--black);
+  font-weight: var(--weight-semibold);
+  font-size: clamp(30px, 3vw, 36px);
+  margin-bottom: 10px;
+}
+
+.banner_pera {
+  max-width: 600px;
+  margin-inline: auto;
+  color: var(--bs-gray-600);
+  font-size: clamp(14px, 3vw, 16px);
+}
+
 /* contries slider */
 .countries {
   position: relative;
@@ -910,8 +924,6 @@ header {
 }
 
 /* properties */
-.properties_slider {}
-
 .property_card {
   border-radius: 15px;
   overflow: hidden;
@@ -1463,6 +1475,152 @@ footer {
   flex: 0 0 auto;
   aspect-ratio: 1;
   width: 120px;
+}
+
+/* peroperties Page */
+.properties_search {
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid var(--bs-gray-300);
+}
+
+.properties_search :where(input, .btn) {
+  border-radius: 0;
+  border: none;
+}
+
+.properties_search input:focus {
+  border-color: var(--white);
+}
+
+.properties_search .btn {
+  padding: 0 15px;
+  background: var(--white);
+  color: var(--bs-gray-600);
+}
+
+.properties_search .btn:hover {
+  translate: 0;
+  color: var(--primary) !important;
+}
+
+.properties_sort {
+  position: relative;
+}
+
+.properties_sort .btn {
+  background: transparent;
+  padding-inline: 0;
+  color: var(--bs-gray-800);
+  font-size: 14px;
+}
+
+.properties_sort .btn:where(:focus, :hover) {
+  translate: 0 !important;
+  background: transparent !important;
+  color: var(--black) !important;
+  box-shadow: none;
+}
+
+.properties_sort .dropdown-menu {
+  z-index: 99;
+}
+
+.properties_grid .property_card {
+  border: 1px solid var(--bs-gray-300);
+}
+
+.properties_filter_heading {
+  color: var(--black);
+  font-size: clamp(16px, 2vw, 18px);
+  font-weight: var(--weight-semibold);
+}
+
+.properties_filter .form-check-group {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 10px;
+  padding-bottom: 15px;
+}
+
+.properties_filter .form-check {
+  justify-content: space-between;
+}
+
+.properties_filter_item .properties_filter_btn {
+  padding: 0;
+  width: 100%;
+  border-radius: 0;
+  color: var(--black);
+  padding-bottom: 15px;
+  background: transparent;
+  justify-content: space-between;
+}
+
+.properties_filter .row>*:not(:first-child) .properties_filter_btn {
+  padding-top: 15px;
+  border-top: 1px solid var(--bs-gray-200);
+}
+
+.properties_filter_item .properties_filter_btn:where(:hover, :focus, :active) {
+  translate: 0 !important;
+  box-shadow: none !important;
+  color: var(--primary) !important;
+  background: transparent !important;
+}
+
+.properties_filter_item .properties_filter_detail {
+  width: 100%;
+  display: none;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  position: relative !important;
+  bottom: 0 !important;
+  margin: 0 !important;
+  transform: none !important;
+}
+
+.properties_filter .house_type {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  padding-bottom: 20px;
+}
+
+.properties_house_type {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 10px;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid var(--bs-gray-200);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.properties_house_type input {
+  display: none;
+}
+
+.properties_house_type:has(input[type="checkbox"]:checked) {
+  background: var(--primary-hover);
+}
+
+.properties_house_type:has(input[type="checkbox"]:checked) .properties_house_type_title {
+  color: var(--white);
+}
+
+.properties_house_type_img {
+  height: 60px;
+  width: 60px;
+}
+
+.properties_house_type_title {
+  text-align: center;
+  font-weight: var(--weight-medium);
+  font-size: 14px;
+  text-transform: capitalize;
 }
 
 /* responsive */
