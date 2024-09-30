@@ -1295,12 +1295,9 @@ header {
 }
 
 /* companies trust */
-.swiper-container {
-  width: 100%;
-  padding-top: 20px;
-  padding-bottom: 20px;
+.companies_trust .swiper-wrapper{
+  transition-timing-function: linear;
 }
-
 .companies_trust .swiper-slide {
   height: unset;
   display: flex;
@@ -1311,8 +1308,7 @@ header {
 .companies_trust .swiper-slide img {
   max-width: 100%;
   height: auto;
-  filter: grayscale(100%);
-  /* Optional: Adds a grayscale effect to the logos */
+  filter: grayscale(100%) opacity(0.5);
   transition: filter 0.3s ease-in-out;
 }
 

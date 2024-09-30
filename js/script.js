@@ -72,9 +72,11 @@ $(function() {
   var swiper = new Swiper('.companies-slider', {
     slidesPerView: 6,
     spaceBetween: 30,
+    speed: 6000,
     loop: true,
     autoplay: {
-      delay: 3000,
+      delay: 0,
+      pauseOnMouseEnter: true,
       disableOnInteraction: false,
     },
   
@@ -103,10 +105,8 @@ $(function() {
   });
 
   $(".properties_filter_btn").click(function() {
-    // Toggle the slide of the properties_filter_detail
     $(this).next(".properties_filter_detail").slideToggle();
     
-    // Toggle the caret icon direction
     $(this).find("i").toggleClass("ph-caret-down ph-caret-up");
   });
 
